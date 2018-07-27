@@ -80,7 +80,7 @@ strs.map! { |str| str[0..str.length-2] } # remove \n
 processed_hexors = []
 strs.each do |str|
   puts "processing #{str}"
-  processed_hexors += process_string(str)
+  processed_hexors.push (process_string(str).sort! { |a,b| sort_hexor a, b }).first
 end
 puts 'sorting'
 processed_hexors.sort! { |a,b| sort_hexor a, b }
