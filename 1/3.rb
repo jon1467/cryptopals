@@ -1,4 +1,3 @@
-require 'byebug'
 arg1 = ARGV.shift || "1b37373331363f78151b7f2b783431333d78397828372d363c78373e783a393b3736"
 heuristic = "ETAOIN SHRDLU".downcase.split ''
 
@@ -22,7 +21,6 @@ hex = [arg1].pack('H*') # pack _into_ binary
 
 hexors = []
 (0..255).each do |cipher|
-  byebug
   hexors.push(xor_array_on_single_value(hex, cipher))
 end
 
